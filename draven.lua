@@ -5,6 +5,10 @@ end
 module("Ovior Draven", package.seeall, log.setup)
 clean.module("Ovior Draven", clean.seeall, log.setup)
 
+local _VER = "1.0.0"
+CoreEx.AutoUpdate("https://raw.githubusercontent.com/dgagn/ovior/master/draven.lua", _VER)
+local _LASTMOD = "16-07-2022"
+
 local Vector = CoreEx.Geometry.Vector
 local TargetSelector = _G.Libs.TargetSelector()
 local Orbwalker = _G.Libs.Orbwalker
@@ -585,7 +589,7 @@ end
 local DravenMenu = {}
 
 function Draven.LoadMenu()
-    Menu.RegisterMenu("OviorDraven", "Ovior Draven", DravenMenu.RegisterMenu, { Author = "Ovior" })
+    Menu.RegisterMenu("OviorDraven", "Ovior Draven", DravenMenu.RegisterMenu, { Author = "Ovior", Version = _VER, LastModified=_LASTMOD })
 end
 
 function DravenMenu.RegisterMenu()
